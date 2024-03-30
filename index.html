@@ -5,111 +5,248 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>duanxc</title>
     <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            font-size: 100%;
-            vertical-align: baseline;
-            background: #f5f5f5;
-            color: #333;
-            font-family: 'Open Sans', sans-serif;
+        html,body,.wrapper{
+            height:100%;
+            width:100%;
+            /* 设置背景色为浅灰色 */
+            background-color: #808080;
         }
-
-        .wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            padding: 20px;
-            background-image: linear-gradient(to right top, #e3f2fd, #bbdefb);
+        input{
+            font-family:inherit;
         }
-
-        .UrlCheck {
-            width: 100%;
-            max-width: 600px;
-            background: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            padding: 20px;
-            border-radius: 8px;
+        *,html,body{
+            font-family:"Lato",serif;
+            font-size:15px;
+            font-weight:300;
+            line-height:22px;
         }
-
-        input[type="text"] {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
+        *:focus{
+            outline:none;
         }
-
-        #submitBtn {
-            display: block;
-            width: 100%;
-            background-color: #64b5f6;
-            color: white;
-            text-align: center;
-            padding: 12px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 600;
+        *,*:before,*:after{
+            -webkit-box-sizing:border-box;
+            -moz-box-sizing:border-box;
+            box-sizing:border-box;
         }
-
-        #submitBtn:hover {
-            background-color: #42a5f5;
+        .UrlCheck{
+            opacity:1;
+            height:auto;
         }
-
+        .UrlCheck{
+            margin-top:0px !important;
+        }
+        .row{
+            position:relative;
+            width:100%;
+        }
+        .row:before,.row:after{
+            content:"";
+            display:table;
+            line-height:0;
+        }
+        .row [class*="span"].noFloat{
+            float:none;
+            margin:2% auto;
+            overflow:hidden;
+        }
+        .UrlCheck .span10{
+            margin-top:70px !important;
+        }
+        h1.splash{
+            font-size:48px;
+            margin:0;
+            margin-top:130px;
+            margin-bottom:0px;
+            line-height:52px;
+            color:#FFFFFF;
+            text-shadow:0px 2px 4px rgba(0,0,0,0.5);
+        }
+        h2.splash{
+            font-size:20px;
+            margin:0;
+            margin-top:1px;
+            margin-bottom:0px;
+            line-height:52px;
+            color:#FFFFFF;
+            text-shadow:0px 2px 4px rgba(0,0,0,0.5);
+        }
+        strong{
+            font-weight:bold;
+        }
+        .UrlCheck .span10{
+            background:rgba(255,255,255,0.5);
+            padding:7px;
+            overflow:hidden;
+            margin-top:0px !important;
+            max-width:800px;
+        }
+        .margin .span10{
+            width:81.33333%;
+        }
+        .row [class*="span"]{
+            float:left;
+            position:relative;
+        }
+        textarea,input[type="text"],input[type="password"]{
+            width:100%;
+            background:#FFF;
+            border:0px solid #CCC;
+            padding:8px 5px;
+            color:#333;
+        }
+        textarea,input[type="text"],input[type="password"]{
+            width:75%;
+            background:#EFEFEF;
+            border:0px solid #CCC;
+            padding:8px 5px;
+            color:#22225d;
+            float:left;
+            -webkit-border-radius:4px;
+            -moz-border-radius:4px;
+            border-radius:4px;
+        }
+        .row .textCenter{
+            text-align:center;
+            background:none;
+        }
+        .UrlCheck input[type="text"]{
+            -webkit-border-radius:4px;
+            -moz-border-radius:4px;
+            border-radius:4px;
+            font-size:20px;
+            height:58px;
+            line-height:58px;
+            width:100%;
+            float:left;
+            padding-left:10px;
+        }
+        .UrlCheck input[type="text"]{
+            -webkit-border-radius:0px;
+            -moz-border-radius:0px;
+            border-radius:0px;
+            -webkit-border-top-left-radius:4px;
+            -moz-border-top-left-radius:4px;
+            border-top-left-radius:4px;
+            -webkit-border-bottom-left-radius:4px;
+            -moz-border-bottom-left-radius:4px;
+            border-bottom-left-radius:4px;
+            font-size:20px;
+            height:58px;
+            line-height:58px;
+            width:70%;
+            float:left;
+            padding-left:10px;
+            background:#FFF;
+        }
+        .UrlCheck #submitBtn{
+            position:absolute;
+            -webkit-border-radius:0px;
+            -moz-border-radius:0px;
+            border-radius:0px;
+            -webkit-border-top-right-radius:4px;
+            -moz-border-top-right-radius:4px;
+            border-top-right-radius:4px;
+            -webkit-border-bottom-right-radius:4px;
+            -moz-border-bottom-right-radius:4px;
+            border-bottom-right-radius:4px;
+            background:#808080; /* Darker blue for the button */
+            font-size:18px;
+            height:58px;
+            line-height:58px;
+            border:0;
+            font-weight:400;
+            width:30%;
+            text-align:center;
+            margin-top:0px;
+            color:#FFF; /* White text color for button */
+            cursor:pointer;
+            right:7px;
+            top:7px;
+        }
+        a,a:visited{
+            color:#22225e;
+            text-decoration:none;
+        }
+        .footer{
+            text-align:center;
+            margin-top:-70px;
+            padding:25px 0 0 0;
+            z-index:1000;
+            background:rgba(0,0,0,0.5);
+            height:70px;
+        }
+        .footer a{
+            margin-right:20px;
+        }
+        /* Additional CSS for white text color on example */
         h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        h2 {
-            text-align: center;
-            color: #999; /* Light gray color */
-            margin-bottom: 20px;
-            font-size: 14px; /* Smaller font size */
+            color: #000; /* This makes all h1 text white, adjust if needed */
         }
     </style>
 </head>
+
 <body>
-    <div class="wrapper">
-        <div class="UrlCheck">
-            <h1>输入URL</h1>
-            <h2>示例：https://github.com</h2>
-            <div class="searchform">
-                <input type="text" id="input" placeholder="请输入URL" name="domainname">
-                <button id="submitBtn">访问</button>
+<div class="wrapper">
+    <div class="UrlCheck">
+        <div class="row margin">
+            <div class="span10 noFloat textCenter">
+
+            </div>
+            <div class="span10 noFloat">
+                <div class="searchform">
+                    <input type="text" id="input" placeholder="请输入URL" name="domainname">
+                    <a id="submitBtn" title="反向代理">访问</a>
+                </div>
             </div>
         </div>
     </div>
-    <script>
-        const urlPattern = /^(http|https):\/\/[^ "]+$/;
-        const input = document.getElementById('input');
-        const submit = document.getElementById('submitBtn');
-
-        input.addEventListener("keyup", (event) => {
-            if (event.key === "Enter") {
-                jumpFn();
-            }
-        });
-
-        submit.addEventListener('click', jumpFn)
-
-        function jumpFn() {
-            const inputVal = input.value;
-            if (!inputVal) {
-                alert("请输入内容！");
-            } else if (!urlPattern.test(inputVal)) {
-                alert("请输入有效的 URL！");
-            } else {
-                const BaseUrl = location.origin;
-                const jumpUrl = `${BaseUrl}/${inputVal.split('://')[0]}${inputVal.split('://')[1]}`;
-                window.open(jumpUrl, "_blank");
-            }
-        }
-    </script>
+</div>
 </body>
+<script>
+    // 这个是正则的啊喂
+    const urlPattern = /^(http|https):\/\/[^ "]+$/;
+
+    // 提前把变量定义出来
+    const input = document.getElementById('input');
+    const submit = document.getElementById('submitBtn');
+
+    // 监听一个键盘的Enter事件
+    input.addEventListener("keyup", (event) => {
+        if (event.key === "Enter") {
+            console.log("Enter键被按下了");
+            // 执行你的操作
+            jumpFn(event)
+        }
+    });
+
+    // 箭筒一个 按钮被点击的事件
+    submit.addEventListener('click', jumpFn)
+
+    // 这个是 主函数
+    function jumpFn(event) {
+        const inputVal = input.value;
+        // 执行你的操作
+        if (!inputVal) {
+            console.log("这也妹有输入内容鸭！");
+        } else if (!urlPattern.test(inputVal)) {
+            // 输入的内容不是 URL，给出提示信息
+            alert("你得输入有效的 URL鸭！");
+        } else {
+            // 业务逻辑
+            console.log('开始处理业务逻辑')
+            // 获取当前的url
+            const BaseUrl = location.origin;
+            // 把输入的内容一截两段
+            const [protocol, hostname] = inputVal.split(':/');
+
+            // 拼接跳转链接
+            const jumpUrl = `${BaseUrl}/${protocol}${hostname}`;
+            // console.log(jumpUrl)
+            // 跳出去
+            window.open(jumpUrl, "_blank");
+            // 完成
+        }
+    }
+</script>
+
 </html>
